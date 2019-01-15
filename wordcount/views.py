@@ -1,4 +1,5 @@
 from django.shortcuts import render
+import string
 
 # Create your views here.
 def home(request):
@@ -9,7 +10,9 @@ def about(request):
 
 def result(request):
     text = request.GET['fulltext']
-    words = text.split()
+    table = str.maketrans({key: None for key in string.punctuation})
+    new_text = text.translate(table)
+    words = new_text.split()
     word_dictionary = {}
 
     for word in words:
