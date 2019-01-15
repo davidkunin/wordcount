@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<br>
+    <h4> 아래 칸에 글을 입력해보세요!</h4>
+<br>
+    <form action="{%url 'result'%}">
+        <div class="form-group">
+            <textarea class="form-control" id="exampleFormControlTextarea1" cols="40" rows="10" name="fulltext"></textarea>
+        </div>
+            <br>
+            <button type="submit" class="btn btn-primary">Count!</button>
+    </form>
+{% endblock %}
